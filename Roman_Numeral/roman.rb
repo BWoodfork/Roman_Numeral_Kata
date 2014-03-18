@@ -1,29 +1,27 @@
 class RomanNumeralConverter
   DIGITS = [
+
+    [100, "C"],
+    [90, "XC"],
+    [50, "L"],
+    [40, "XL"],
+    [20, "XX"],
     [10, "X"],
     [9, "IX"],
-    [7, "VII"],
-    [6, "VI"],
     [5, "V"],
-    [3, "III"],
     [2, "II"],
     [1, "I"],
-    
-
   ]
 
   def convert(n)
-    result = ""
+
+     result = ""
       DIGITS.each do |arabic, roman|
         while n >= arabic
-          result << roman
-          n -= arabic
+         result << roman
+         n -= arabic
         end
       end
-
-    return result
+      result
   end
 end
-
-# 5 - 5 = 0  .. V
-# 6 - 5 = 1 .. I
